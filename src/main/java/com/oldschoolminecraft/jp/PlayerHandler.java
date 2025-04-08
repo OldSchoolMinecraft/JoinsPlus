@@ -12,6 +12,7 @@ public class PlayerHandler extends PlayerListener
         if (msg == null) msg = new Message();
         String message = msg.join;
         message = message.replace("%player%", event.getPlayer().getName());
+        message = message.replace("<", "").replace(">", "");
         event.setJoinMessage(translateAlternateColorCodes('&', message));
     }
     
@@ -21,6 +22,7 @@ public class PlayerHandler extends PlayerListener
         if (msg == null) msg = new Message();
         String message = msg.quit;
         message = message.replace("%player%", event.getPlayer().getName());
+        message = message.replace("<", "").replace(">", "");
         event.setQuitMessage(translateAlternateColorCodes('&', message));
     }
     
